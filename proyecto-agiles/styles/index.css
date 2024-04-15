@@ -1,0 +1,24 @@
+ .nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+.secciones{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.contenedor-imagenes {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las imágenes se distribuyan en varias filas */
+  justify-content: center; /* Centra las imágenes horizontalmente */
+  align-items: flex-start; /* Alinea las imágenes en la parte superior */
+  width: 60%; /* Ajusta el ancho del contenedor según tu diseño */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.contenedor-imagenes img {
+  width: 45%; /* Ajusta el ancho de las imágenes */
+  height: auto; /* Mantiene la relación de aspecto */
+  margin: 10px; /* Agrega espacio entre las imágenes */
+}

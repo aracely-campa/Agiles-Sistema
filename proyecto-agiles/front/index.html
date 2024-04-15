@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="estiloIndex" href="styles\estiloIndex.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal</title>
+  <link rel="stylesheet" href="/styles\index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principal</title>
 </head>
+
 <body>
-    <form action="/busqueda">
+  <h1>DomitzuGames</h1>
+  <nav class="nav">
+    <div class="form-buscador">
+      <form action="/busqueda">
         <input type="text" name="termino" placeholder="Ingrese su búsqueda">
         <input type="submit" value="Buscar">
-    </form>
-    <a href="/front/IniciarSesion.html">
+      </form>
+    </div>
+    <div class="botones-navbar">
+      <a href="/front/IniciarSesion.html">
         <button>Iniciar sesion</button>
       </a>
       <a href="/front/carrito.html">
         <button>Carrito de compras</button>
       </a>
-      <a href="/front/producto.html">
-        <button>Productos</button>
-      </a>
+    </div>
+  </nav>
+  <div class="secciones">
+    <a href="/front/seccionplaystation.html">
+      <button>PlayStation</button>
+    </a>
+    <a href="/front/seccionXbox.html">
+      <button>Xbox</button>
+    </a>
+    <a href="/front/seccionNintendo.html">
+      <button>Nintendo</button>
+    </a>
+    <a href="/front/seccionPc.html">
+      <button>Pc</button>
+    </a>
+    <button>filtro</button>
+  </div>
+  <div class="filtro">
+  </div>
+  <div class="contenedor-imagenes">
+    <img src="/otros/pc-sims2.jpg" alt="Producto 1">
+    <img src="/otros/pc-terraria.jpg" alt="Producto 2">
+    <img src="/otros/wii-zelda.jpg" alt="Producto 3">
+    <img src="/otros/xbox-snoopys.jpg" alt="Producto 4">
+  </div>
+  
 </body>
+
 </html>
