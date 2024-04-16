@@ -89,3 +89,10 @@ size-adjust: 25%;
   padding-right: 5%;
   padding-left: 5%;
 }
+
+.carousel-container{
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
