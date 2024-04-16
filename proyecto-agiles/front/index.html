@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="../styles\index.css">
+  <link rel="stylesheet" href="../styles\grid.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -22,7 +23,7 @@
         aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
+
       <div class="collapse navbar-collapse" id="navbarsExample09">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -44,14 +45,14 @@
             </ul>
           </li>
         </ul>
-        <a class="CarritoCompras" href="/front/carrito.html"> <i class="bi bi-cart" ></i> </i></a>
+        <a class="CarritoCompras" href="/front/carrito.html"> <i class="bi bi-cart"></i> </i></a>
         <form role="search">
           <input class="form-control" type="search" placeholder="Buscar..." aria-label="Search">
         </form>
       </div>
     </div>
   </nav>
-  
+
   <!-- Modal inicio sesión -->
   <div class="modal" tabindex="-1" role="dialog" id="modalLogin">
     <div class="modal-dialog" role="document">
@@ -60,7 +61,7 @@
           <h1 class="fw-bold mb-0 fs-2">Inicio de sesión</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-  
+
         <div class="modal-body p-5 pt-0">
           <form class="">
             <div class="form-floating mb-3">
@@ -72,7 +73,8 @@
               <label for="floatingPassword">Contraseña</label>
             </div>
             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Iniciar sesión</button>
-            <small class="text-body-secondary">¿No tiene cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#modalSignIn">Registrese gratis</a></small>
+            <small class="text-body-secondary">¿No tiene cuenta? <a href="#" data-bs-toggle="modal"
+                data-bs-target="#modalSignIn">Registrese gratis</a></small>
             <hr class="my-4">
             <h2 class="fs-5 fw-bold mb-3">O inicie sesión usando una cuenta de terceros</h2>
             <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
@@ -99,54 +101,98 @@
     </div>
   </div>
 
-    <!-- Modal Registro -->
-    <div class="modal" tabindex="-1" role="dialog" id="modalSignIn">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content rounded-4 shadow">
-          <div class="modal-header p-5 pb-4 border-bottom-0">
-            <h1 class="fw-bold mb-0 fs-2">Registro</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-    
-          <div class="modal-body p-5 pt-0">
-            <form class="">
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="nombre@ejemplo.com">
-                <label for="floatingInput">Dirección de correo</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Contraseña">
-                <label for="floatingPassword">Contraseña</label>
-              </div>
-              <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Registrar</button>
-              <small class="text-body-secondary">¿Ya tiene cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">Inicie sesión</a></small>
-              <hr class="my-4">
-              <h2 class="fs-5 fw-bold mb-3">O registrese usando una cuenta de terceros</h2>
-              <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
-                <svg class="bi me-1" width="16" height="16">
-                  <use xlink:href="#twitter" />
-                </svg>
-                Registrarse con Twitter
-              </button>
-              <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
-                <svg class="bi me-1" width="16" height="16">
-                  <use xlink:href="#facebook" />
-                </svg>
-                Registrarse con Facebook
-              </button>
-              <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
-                <svg class="bi me-1" width="16" height="16">
-                  <use xlink:href="#github" />
-                </svg>
-                Registrarse con Github
-              </button>
-            </form>
+  <!-- Modal Registro -->
+  <div class="modal" tabindex="-1" role="dialog" id="modalSignIn">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h1 class="fw-bold mb-0 fs-2">Registro</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-5 pt-0">
+          <form class="">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="nombre@ejemplo.com">
+              <label for="floatingInput">Dirección de correo</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Contraseña">
+              <label for="floatingPassword">Contraseña</label>
+            </div>
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Registrar</button>
+            <small class="text-body-secondary">¿Ya tiene cuenta? <a href="#" data-bs-toggle="modal"
+                data-bs-target="#modalLogin">Inicie sesión</a></small>
+            <hr class="my-4">
+            <h2 class="fs-5 fw-bold mb-3">O registrese usando una cuenta de terceros</h2>
+            <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#twitter" />
+              </svg>
+              Registrarse con Twitter
+            </button>
+            <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#facebook" />
+              </svg>
+              Registrarse con Facebook
+            </button>
+            <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#github" />
+              </svg>
+              Registrarse con Github
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spacing -->
+  <br><br><br>
+  <!-- Grid -->
+  <div class="grid-container"> 
+  <div class="row mb-3 text-center">
+    <div class="col-md-10 themed-grid-col">
+      <div class="pb-3">
+        <h1><b>Productos</b></h1>
+      </div>
+      <div class="row row-products">
+        <div class="col-md-5 themed-grid-col">.col-md-6</div>
+        <div class="col-md-2 spacing"></div>
+        <div class="col-md-5 themed-grid-col">.col-md-6</div>
+      </div>
+      <br>
+      <div class="row row-products">
+        <div class="col-md-5 themed-grid-col">.col-md-6</div>
+        <div class="col-md-2 spacing"></div>
+        <div class="col-md-5 themed-grid-col">.col-md-6</div>
+      </div>
+    </div>
+    <div class="col-md-2 themed-grid-col">
+      <div class="filter">
+        <h2><b>Filtro</b></h2>
+        <div class="opciones-filtro">
+          <p><h3><b>Categorias:</b></h2> </p>
+          <div class ="filtro-categorias">
+            <h4><input type="checkbox" id="Playstation" name="Playstation" /> 
+              <label for="horns">Playstation</label> <br></h4>
+              <h4><input type="checkbox" id="Xbox" name="Xbox" />
+                <label for="horns">Xbox</label> <br></h4>
+              <h4><input type="checkbox" id="Nintendo" name="Nintendo" />
+                <label for="horns">Nintendo</label> <br></h4>
+              <h4><input type="checkbox" id="PC" name="PC" />
+                <label for="horns">PC</label> <br></h4>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-
+  <!-- Spacing -->
+  <br><br><br>
 
   <nav class="nav">
     <div class="form-buscador">

@@ -1,0 +1,91 @@
+.themed-grid-col {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+
+  background-color: rgba(112.520718, 44.062154, 249.437846, .15);
+  border: 1px solid rgba(112.520718, 44.062154, 249.437846, .3);
+
+}
+
+.themed-container {
+  padding: .75rem;
+  margin-bottom: 1.5rem;
+  background-color: rgba(112.520718, 44.062154, 249.437846, .15);
+  border: 1px solid rgba(112.520718, 44.062154, 249.437846, .3);
+}
+
+.row-products{
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.row spacing {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+
+.filtro-categorias {}
+
+.col-md-4 {
+  text-align: right;
+
+  border: 1px solid red;
+
+
+}
+
+.pb-3 h1{
+  position: left;
+  color: black;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.filter h2{
+  position: left;
+  color: black;
+  text-align: left;
+  padding: 1%;
+  padding-left: 5%;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.filter h3{
+  position: left;
+  color: black;
+  text-align: left;
+  padding: 1%;
+  padding-left: 5%;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.filter h4{
+  position: left;
+  color: black;
+  text-align: left;
+  padding: 1%;
+  padding-left: 5%;
+  text-decoration: none;
+  font-size: .75rem;
+}
+
+.row mb-3 col-md-3 {
+  size-adjust: 25%;
+  }
+
+.row mb-3 col-md-4 {
+size-adjust: 25%;
+}
+
+.grid-container{
+  padding-right: 5%;
+  padding-left: 5%;
+}
