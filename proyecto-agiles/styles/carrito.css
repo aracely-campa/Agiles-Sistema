@@ -1,0 +1,14 @@
+.boton-pagar {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #4CAF50; /* Un color verde estándar para acciones de 'Pagar' */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-pagar:hover {
+    background-color: #45a049; /* Un tono ligeramente más oscuro al hacer hover */
+}

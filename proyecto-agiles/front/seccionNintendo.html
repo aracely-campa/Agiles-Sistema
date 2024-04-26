@@ -162,61 +162,61 @@
       <div class="item">
           <span class="titulo-item">Animal Crossing New Horizon </span>
           <img src="/otros/Juegos Nintendo/Animal Crossing New Horizons - Nintendo Switch.jpeg" alt="" class="img-item">
-          <span class="precio-item">$10.000</span>
+          <span class="precio-item">100</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
       <div class="item">
           <span class="titulo-item">Bayonetta 3</span>
           <img src="/otros/Juegos Nintendo/Bayonetta 3 - Nintendo Switch.jpeg" alt="" class="img-item">
-          <span class="precio-item">$25.000</span>
+          <span class="precio-item">250</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
       <div class="item">
           <span class="titulo-item">LEGO Star Wars: The Skywalker Saga</span>
           <img src="/otros/Juegos Nintendo/LEGO Star Wars - Nintendo Switch.jpeg" alt="" class="img-item">
-          <span class="precio-item">$35.000</span>
+          <span class="precio-item">350</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
       <div class="item">
           <span class="titulo-item">Mario Kart 8 Deluxe </span>
           <img src="/otros/Juegos Nintendo/Mario Kart 8 Deluxe - Nintendo Switch.jpeg" alt="" class="img-item">
-          <span class="precio-item">$18.000</span>
+          <span class="precio-item">65</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
       <div class="item">
           <span class="titulo-item">Paper Mario: The Thousand Year Door</span>
           <img src="/otros/Juegos Nintendo/Paper Mario The Thousand-Year Door - Nintendo Switch.jpeg" alt="producto 5N" class="img-item">
-          <span class="precio-item">$32.000</span>
+          <span class="precio-item">96</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
       <div class="item">
           <span class="titulo-item">Pokemon Violet</span>
           <img src="/otros/Juegos Nintendo/Pokemon Violet - Nintendo Switch.jpeg" alt="" class="img-item">
-          <span class="precio-item">$18.000</span>
+          <span class="precio-item">110</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
       <div class="item">
           <span class="titulo-item">Princess Peach Showtime!</span>
           <img src="/otros/Juegos Nintendo/Princess Peach Showtime! - Nintendo Switch.jpeg" alt="" class="img-item">
-          <span class="precio-item">$54.000</span>
+          <span class="precio-item">54</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
       <div class="item">
           <span class="titulo-item">Resident Evil: Triple Pack</span>
           <img src="/otros/Juegos Nintendo/Resident Evil 4 - Nintendo Switch.jpeg" alt="" class="img-item">
-          <span class="precio-item">$32.000</span>
+          <span class="precio-item">"89</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
       <div class="item">
           <span class="titulo-item">Super Mario RPG</span>
           <img src="/otros/Juegos Nintendo/Super Mario RPG - Nintendo Switch.jpeg" alt="" class="img-item">
-          <span class="precio-item">$42.800</span>
+          <span class="precio-item">42</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
       <div class="item">
         <span class="titulo-item">Super Smash Bros Ultimate</span>
         <img src="/otros/Juegos Nintendo/Super Smash Bros. Ultimate - Nintendo Switch.jpeg" alt="" class="img-item">
-        <span class="precio-item">$42.800</span>
+        <span class="precio-item">55</span>
         <button class="boton-item">Agregar al Carrito</button>
     </div>
   </div>
@@ -246,36 +246,37 @@
       </ul>
     </footer>
   </div>
-  <script>
-    document.querySelectorAll('.boton-item').forEach(boton => {
-        boton.addEventListener('click', () => {
-            const item = boton.closest('.item');
-            const titulo = item.querySelector('.titulo-item').textContent;
-            const precio = item.querySelector('.precio-item').textContent;
-            const imagenSrc = item.querySelector('.img-item').src;
-
-            const producto = { titulo, precio, imagen: imagenSrc, cantidad: 1 };
-            agregarAlCarrito(producto);
-        });
-    });
-
-    function agregarAlCarrito(producto) {
-        let carrito = [];
-        if (localStorage.getItem('carrito')) {
-            carrito = JSON.parse(localStorage.getItem('carrito'));
-        }
-        
-        const existente = carrito.find(p => p.titulo === producto.titulo);
-        if (existente) {
-            existente.cantidad += 1;
-        } else {
-            carrito.push(producto);
-        }
-
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-        alert('Producto añadido al carrito');
-    }
-</script>
+  <script>src="../js/agregarCarrito.js"</script>
+  
 </body>
+<script>
+  document.querySelectorAll('.boton-item').forEach(boton => {
+      boton.addEventListener('click', () => {
+          const item = boton.closest('.item');
+          const titulo = item.querySelector('.titulo-item').textContent;
+          const precio = item.querySelector('.precio-item').textContent;
+          const imagenSrc = item.querySelector('.img-item').src;
 
+          const producto = { titulo, precio, imagen: imagenSrc, cantidad: 1 };
+          agregarAlCarrito(producto);
+      });
+  });
+
+  function agregarAlCarrito(producto) {
+      let carrito = [];
+      if (localStorage.getItem('carrito')) {
+          carrito = JSON.parse(localStorage.getItem('carrito'));
+      }
+      
+      const existente = carrito.find(p => p.titulo === producto.titulo);
+      if (existente) {
+          existente.cantidad += 1;
+      } else {
+          carrito.push(producto);
+      }
+
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert('Producto añadido al carrito');
+  }
+</script>
 </html>
