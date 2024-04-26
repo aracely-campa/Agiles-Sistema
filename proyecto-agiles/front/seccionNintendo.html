@@ -150,7 +150,7 @@
       </div>
     </div>
   </div>
-
+  <p style="position: center; color: black; text-align: center; font-size: 2rem;"><b>Nintendo</b></p>
   <!-- Spacing -->
   <br><br><br>
   <br><br><br>
@@ -160,7 +160,7 @@
   <!-- Contenedor de elementos -->
   <div class="contenedor-items">
       <div class="item">
-          <span class="titulo-item">Animal Crossing New Horizon</span>
+          <span class="titulo-item">Animal Crossing New Horizon </span>
           <img src="/otros/Juegos Nintendo/Animal Crossing New Horizons - Nintendo Switch.jpeg" alt="" class="img-item">
           <span class="precio-item">$10.000</span>
           <button class="boton-item">Agregar al Carrito</button>
@@ -185,7 +185,7 @@
       </div>
       <div class="item">
           <span class="titulo-item">Paper Mario: The Thousand Year Door</span>
-          <img src="/otros/Juegos Nintendo/Paper Mario The Thousand-Year Door - Nintendo Switch.jpeg" alt="" class="img-item">
+          <img src="/otros/Juegos Nintendo/Paper Mario The Thousand-Year Door - Nintendo Switch.jpeg" alt="producto 5N" class="img-item">
           <span class="precio-item">$32.000</span>
           <button class="boton-item">Agregar al Carrito</button>
       </div>
@@ -222,7 +222,7 @@
   </div>
 
 
-  <p style="position: center; color: black; text-align: center; font-size: 2rem;"><b>Nintendo</b></p>
+  
 
   <br><br><br>
   <br><br><br>
@@ -246,7 +246,36 @@
       </ul>
     </footer>
   </div>
+  <script>
+    document.querySelectorAll('.boton-item').forEach(boton => {
+        boton.addEventListener('click', () => {
+            const item = boton.closest('.item');
+            const titulo = item.querySelector('.titulo-item').textContent;
+            const precio = item.querySelector('.precio-item').textContent;
+            const imagenSrc = item.querySelector('.img-item').src;
 
+            const producto = { titulo, precio, imagen: imagenSrc, cantidad: 1 };
+            agregarAlCarrito(producto);
+        });
+    });
+
+    function agregarAlCarrito(producto) {
+        let carrito = [];
+        if (localStorage.getItem('carrito')) {
+            carrito = JSON.parse(localStorage.getItem('carrito'));
+        }
+        
+        const existente = carrito.find(p => p.titulo === producto.titulo);
+        if (existente) {
+            existente.cantidad += 1;
+        } else {
+            carrito.push(producto);
+        }
+
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        alert('Producto añadido al carrito');
+    }
+</script>
 </body>
 
 </html>
