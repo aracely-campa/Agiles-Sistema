@@ -1,30 +1,30 @@
 
+
     document.querySelectorAll('.boton-item').forEach(boton => {
-    boton.addEventListener('click', () => {
-        const item = boton.closest('.item');
-        const titulo = item.querySelector('.titulo-item').textContent;
-        const precioTexto = item.querySelector('.precio-item').textContent;
-        const precio = parseFloat(precioTexto.replace('$', '').replace(/\./g, ''));
-        const imagenSrc = item.querySelector('.img-item').src;
+        boton.addEventListener('click', () => {
+            const item = boton.closest('.item');
+            const titulo = item.querySelector('.titulo-item').textContent;
+            const precio = item.querySelector('.precio-item').textContent;
+            const imagenSrc = item.querySelector('.img-item').src;
 
-        const producto = {
-            titulo: titulo,
-            precio: precio,
-            imagen: imagenSrc,
-            cantidad: 1
-        };
-
-        agregarAlCarrito(producto);
+            const producto = { titulo, precio, imagen: imagenSrc, cantidad: 1 };
+            agregarAlCarrito(producto);
+        });
     });
-});
 
-function agregarAlCarrito(producto) {
-    let carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
-    const existenteIndex = carrito.findIndex(p => p.titulo === producto.titulo);
-    if (existenteIndex !== -1) {
-        carrito[existenteIndex].cantidad += 1;
-    } else {
-        carrito.push(producto);
+    function agregarAlCarrito(producto) {
+        let carrito = [];
+        if (localStorage.getItem('carrito')) {
+            carrito = JSON.parse(localStorage.getItem('carrito'));
+        }
+        
+        const existente = carrito.find(p => p.titulo === producto.titulo);
+        if (existente) {
+            existente.cantidad += 1;
+        } else {
+            carrito.push(producto);
+        }
+
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        alert('Producto añadido al carrito');
     }
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-}
