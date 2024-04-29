@@ -18,4 +18,22 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   controllers: [AppController],
   providers: [AppService],
 })
+
+@Module({
+  imports:[
+    ClientsModule.register([{
+      name: "search-service",
+      transport: Transport.RMQ,
+      options:{
+        urls: ["amqp://localhost:5672"],
+        queue: "search-service",
+      },
+    },
+    ]),
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+
+
 export class AppModule {}
