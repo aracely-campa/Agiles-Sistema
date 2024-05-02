@@ -1,12 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post('apply-coupon')
+  async applyCoupon(@Body('code') code: string, @Body('price') price: number): Promise<number> {
+    return this.appService.applyCoupon(code, price);
   }
 }

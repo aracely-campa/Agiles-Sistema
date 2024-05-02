@@ -25,5 +25,10 @@ export class AppController {
     return this.appService.search(query);
   }
 
+  @Post("apply-coupon")
+  applyCoupon(@Body() coupon:String){
+    return this.appService.applyCoupon(coupon);
+  }
+
 
 }
