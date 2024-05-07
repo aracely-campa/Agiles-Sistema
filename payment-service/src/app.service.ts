@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
 
   msgs: String[]=[];
-
+  deliveryMethod: string;
 
   handleMsgReceived(msg: String){
     console.log(`Incoming MSG: ${msg}`);
@@ -18,6 +18,13 @@ export class AppService {
   fetchMsgByIndex(index: number){
     console.log(`Fetched MSG: ${this.msgs.at(index)}`);
     return this.msgs[index];
-     }
-  
-}
+  }
+
+  updateDeliveryMethod(method: string){
+    this.deliveryMethod = method;
+  }
+
+  getDeliveryMethod(){
+    return this.deliveryMethod;
+  }
+} 

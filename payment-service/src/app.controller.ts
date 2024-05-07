@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 import { EventPattern, MessagePattern, Payload } from '@nestjs/microservices';
 
@@ -19,6 +19,16 @@ export class AppController {
   @MessagePattern({cmd: "get-all-msgs"})
   fetchAllMsgs(){
     return this.appService.fechAllMsgs();
+  }
+
+  @Post("update-delivery-method")
+  updateDeliveryMethod(@Body() method: string){
+    return this.appService.updateDeliveryMethod(method);
+  }
+
+  @Get("get-delivery-method")
+  getDeliveryMethod(){
+    return this.appService.getDeliveryMethod();
   }
 
 }

@@ -30,5 +30,14 @@ export class AppController {
     return this.appService.applyCoupon(coupon);
   }
 
+  @Post("update-delivery-method")
+  updateDeliveryMethod(@Body() method:String){
+    return this.appService.updateDeliveryMethod(method);
+  }
+
+  @Get("get-delivery-method")
+  getDeliveryMethod(){
+    return this.appService.getDeliveryMethod();
+  }
 
 }
